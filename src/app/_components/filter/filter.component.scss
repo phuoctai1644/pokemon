@@ -1,0 +1,53 @@
+.filter-wrapper {
+  min-width: 200px;
+  max-width: 400px;
+  background-color: var(--x-light);
+  border-radius: 20px;
+  padding: 8px 15px;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .selected-list {
+    flex: 1;
+    display: flex;
+    width: 70%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    .selected-item {
+      padding: 2px 8px;
+      background-color: var(--x-primary);
+      border-radius: 5px;
+      & ~ .selected-item {
+        margin-left: 5px;
+      }
+    }
+  }
+
+  .filter-dropdown {
+    position: absolute;
+    top: calc(100% + 5px);
+    right: 0;
+    max-height: 400px;
+    min-width: 60%;
+    z-index: 10;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+
+    .option-list {
+      overflow-y: auto;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+  }
+}

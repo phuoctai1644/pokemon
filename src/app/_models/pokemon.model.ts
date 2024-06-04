@@ -5,7 +5,7 @@ export interface PokemonSearchParams {
   'filter[name]'?: string;
   'filter[generation]'?: number;
   'filter[legendary]'?: number;
-  'filter[type]'?: number;
+  'filter[type]'?: number[];
   'filter[min_total]'?: number;
   'filter[max_total]'?: number;
   'filter[min_speed]'?: number;

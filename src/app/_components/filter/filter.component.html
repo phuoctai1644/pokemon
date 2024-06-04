@@ -1,0 +1,24 @@
+<div class="filter-wrapper" (click)="isCollapsed = !isCollapsed">
+  <span class="fw-700 fs-14">{{label}}:</span>
+  <div class="selected-list ml-10">
+    @for (selected of selectedItems; track selected) {
+      <div class="selected-item">
+        <span>{{selected.name}}</span>
+      </div>
+    }
+  </div>
+  <span class="arrow">
+    <img src="assets/icons/arrow-up.svg" [ngClass]="isCollapsed ? 'rotate-180' : ''">
+  </span>
+
+  <div stopEvent class="filter-dropdown" *ngIf="!isCollapsed">
+    <div class="option-list mt-5">
+      @for(option of filterItemUI; track option.id) {
+        <div class="option-item" (click)="onToggle(option)">
+          <input type="checkbox" [checked]="option.selected">
+          <span class="ml-10">{{option.name}}</span>
+        </div>
+      }
+    </div>
+  </div>
+</div>

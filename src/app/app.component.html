@@ -2,8 +2,10 @@
   <div class="header">
     <img src="assets/img/logo.svg" alt="Pokemon's">
   </div>
-  <div class="utils"></div>
-  <div class="content">
+  <div class="utils ml-auto">
+    <app-filter label="Pokemon Type" [items]="types" (change)="onFilterChanged($event, filterType.TYPE)"></app-filter>
+  </div>
+  <div class="content mt-15">
     @for (pokemon of pokemonList; track pokemon.id) {
       <app-pokemon-card
         [pokemon]="pokemon"

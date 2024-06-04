@@ -1,9 +1,21 @@
 .container {
-  padding: 0 15px;
+  padding: 0 35px;
 }
 
 .center {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.rotate-45 {
+  transform: rotate(45deg);
+}
+
+.rotate-90 {
+  transform: rotate(90deg);
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
 }
