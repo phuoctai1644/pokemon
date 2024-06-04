@@ -1,7 +1,7 @@
 export interface PokemonSearchParams {
   'page[number]'?: number;
   'page[size]'?: number;
-  'sort'?: number;
+  'sort'?: string;
   'filter[name]'?: string;
   'filter[generation]'?: number;
   'filter[legendary]'?: number;

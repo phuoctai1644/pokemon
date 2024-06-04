@@ -7,8 +7,11 @@ import { PokemonCardComponent } from './_components/pokemon-card/pokemon-card.co
 import { PokemonTypesPipe } from './_pipes/pokemon-types.pipe';
 import { FilterComponent } from './_components/filter/filter.component';
 import { FilterItem, FilterItemUI, FilterType } from './_models/filter.model';
+import { SortComponent } from './_components/sort/sort.component';
+import { SortItem } from './_models/sort.model';
+import { SortDirection } from './_consts/sort.const';
 
-const COMPONENTS = [PokemonCardComponent, FilterComponent];
+const COMPONENTS = [PokemonCardComponent, FilterComponent, SortComponent];
 const PIPES = [PokemonTypesPipe];
 const DIRECTIVES = [NgFor]
 
@@ -72,6 +75,16 @@ export class AppComponent implements OnInit, OnDestroy {
     if (filterType === FilterType.TYPE) {
       this.searchParams['filter[type]'] = filters.map(el => el.id);
     }
+    this.getAllPokemon();
+  }
+
+  onSortChanged(sort: SortItem) {
+    let sortParam = sort.value;
+    if (sort.direction === SortDirection.DESC) {  
+      sortParam = `-${sortParam}`;
+    }
+
+    this.searchParams.sort = sortParam;
     this.getAllPokemon();
   }
 }

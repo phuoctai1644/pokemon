@@ -4,6 +4,9 @@
   </div>
   <div class="utils ml-auto">
     <app-filter label="Pokemon Type" [items]="types" (change)="onFilterChanged($event, filterType.TYPE)"></app-filter>
+    <div class="ml-10">
+      <app-sort (change)="onSortChanged($event)"></app-sort>
+    </div>
   </div>
   <div class="content mt-15">
     @for (pokemon of pokemonList; track pokemon.id) {

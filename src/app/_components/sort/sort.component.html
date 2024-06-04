@@ -1,1 +1,30 @@
-<p>sort works!</p>
+<div class="sort-wrapper" (click)="isCollapsed = !isCollapsed">
+  <div *ngIf="selected else unsortTemplate">
+    <span>{{selected.label}}</span>
+    <span class="fs-24 ml-5">{{selectedDir === direction.ASC ? '&#8595;' : '&#8593;'}}</span>
+  </div>
+  <ng-template #unsortTemplate>
+    <span class="fs-24">&#8693;</span>
+  </ng-template>
+
+  <div stopEvent class="sort-dropdown" *ngIf="!isCollapsed">
+    <div class="option-list mt-5">
+      @for(option of sortItems; track option.label) {
+        <div class="option-item" (click)="onSelect(option)">
+          <input type="radio" [checked]="selected?.label === option?.label">
+          <span class="ml-10">{{option.label}}</span>
+        </div>
+      }
+    </div>
+    <div class="directions">
+      <div class="directions-item" [ngClass]="{'active': selectedDir === direction.ASC}" (click)="onChangeDirection(direction.ASC)">
+        <img src="assets/icons/arrow-up-sort.svg" alt="Sort Ascending">
+        <span class="ml-5">Ascending</span>
+      </div>
+      <div class="directions-item" [ngClass]="{'active': selectedDir === direction.DESC}" (click)="onChangeDirection(direction.DESC)">
+        <img src="assets/icons/arrow-down-sort.svg" alt="Sort Descending">
+        <span class="ml-5">Descending</span>
+      </div>
+    </div>
+  </div>
+</div>
