@@ -1,0 +1,62 @@
+<div class="pokemon-card-wrapper">
+  <div class="name text-center">
+    <span class="fs-18 fw-600">{{pokemon.name}}</span>
+  </div>
+  <div class="type-list mt-15">
+    @for (type of types; track type.id) {
+      <div class="type">
+        <span>{{type.name}}</span>
+      </div>
+    }
+  </div>
+  <div class="stat-list mt-15">
+    <div class="flex ai_c">
+      <span class="stat-name">Hp</span>
+      <div class="stat-progress ml-10">
+        <app-progress [items]="pokemon.hp | pokemonStatistic : pokemonMaxStatistic.HP"></app-progress>
+      </div>
+    </div>
+
+    <div class="flex ai_c mt-5">
+      <span class="stat-name">Attack</span>
+      <div class="stat-progress ml-10">
+        <app-progress [items]="pokemon.attack | pokemonStatistic : pokemonMaxStatistic.ATTACK"></app-progress>
+      </div>
+    </div>
+
+    <div class="flex ai_c mt-5">
+      <span class="stat-name">Defense</span>
+      <div class="stat-progress ml-10">
+        <app-progress [items]="pokemon.attack | pokemonStatistic : pokemonMaxStatistic.DEFENSE"></app-progress>
+      </div>
+    </div>
+
+    <div class="flex ai_c mt-5">
+      <span class="stat-name">Sp_atk</span>
+      <div class="stat-progress ml-10">
+        <app-progress [items]="pokemon.attack | pokemonStatistic : pokemonMaxStatistic.SP_ATK"></app-progress>
+      </div>
+    </div>
+
+    <div class="flex ai_c mt-5">
+      <span class="stat-name">Sp_def</span>
+      <div class="stat-progress ml-10">
+        <app-progress [items]="pokemon.attack | pokemonStatistic : pokemonMaxStatistic.SP_DEF"></app-progress>
+      </div>
+    </div>
+
+    <div class="flex ai_c mt-5">
+      <span class="stat-name">Speed</span>
+      <div class="stat-progress ml-10">
+        <app-progress [items]="pokemon.attack | pokemonStatistic : pokemonMaxStatistic.SPEED"></app-progress>
+      </div>
+    </div>
+
+    <div class="flex ai_c mt-5">
+      <span class="stat-name">Total</span>
+      <div class="stat-progress ml-10">
+        <app-progress [items]="pokemon.attack | pokemonStatistic : pokemonMaxStatistic.TOTAL"></app-progress>
+      </div>
+    </div>
+  </div>
+</div>

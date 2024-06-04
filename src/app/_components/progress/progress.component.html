@@ -1,0 +1,6 @@
+<div class="progress-wrapper">
+  <ng-container *ngFor="let item of items; let index = index">
+    <div class="status" [ngStyle]="item | progressColor : index : total : items : height" *ngIf="item.count > 0">
+    </div>
+  </ng-container>
+</div>

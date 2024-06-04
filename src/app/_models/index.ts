@@ -1,13 +1,8 @@
 export * from './pokemon.model';
+export * from './progress.model';
 
-export interface List2Res<T> {
-  data: T[];
+export interface Response<T> {
+  data: T;
   status: number;
   success: boolean;
-}
-
-export interface Pageable {
-  'page[number]'?: number;
-  'page[size]'?: number;
-  'sort'?: number;
 }

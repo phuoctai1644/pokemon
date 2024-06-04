@@ -1,0 +1,17 @@
+$progressBorder: 10px;
+
+.progress-wrapper {
+  display: flex;
+
+  .status {
+    &:first-child {
+      border-top-left-radius: $progressBorder;
+      border-bottom-left-radius: $progressBorder;
+    }
+
+    &:last-child {
+      border-top-right-radius: $progressBorder;
+      border-bottom-right-radius: $progressBorder;
+    }
+  }
+}

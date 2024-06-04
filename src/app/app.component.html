@@ -1,3 +1,15 @@
-<div class="app-wrapper">
-  
+<div class="app-wrapper container">
+  <div class="header">
+    <img src="assets/img/logo.svg" alt="Pokemon's">
+  </div>
+  <div class="utils"></div>
+  <div class="content">
+    @for (pokemon of pokemonList; track pokemon.id) {
+      <app-pokemon-card
+        [pokemon]="pokemon"
+        [types]="pokemon | pokemonTypes : types">
+      </app-pokemon-card>
+    }
+  </div>
+  <div class="paging"></div>
 </div>
